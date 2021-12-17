@@ -1,0 +1,16 @@
+# For more information about the available options please visit: http://go/backstage (VPN required)
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  annotations:
+    github.com/project-slug: Unity-Technologies/ConnectAppCN2
+  name: ConnectAppCN2
+  description: "Unity Connect app made with Unity (Based on the UIWidgets2.0)."
+  labels:
+    costcenter: "4100"
+  tags:
+    - planned-public
+spec:
+  type: other
+  lifecycle: production
+  owner: unity-technologies/unity_china_rnd
