@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.unity3d.player"
+          android:installLocation="preferExternal">
+
+  <supports-screens
+          android:anyDensity="true"
+          android:largeScreens="true"
+          android:normalScreens="true"
+          android:smallScreens="true"
+          android:xlargeScreens="true" />
+  <!-- Required -->
+  <application
+          android:name="com.unity3d.unityconnect.CustomApplication"
+          android:isGame="false"
+          android:requestLegacyExternalStorage="true"
+          android:supportsRtl="true"
+          android:theme="@android:style/Theme.Material.Light.LightStatusBar"
+          android:usesCleartextTraffic="true"
+          tools:ignore="MissingTvBanner"
+          tools:targetApi="m">
+    <activity
+            android:name="com.unity3d.unityconnect.UnityPlayerActivityStatusBar"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+            android:hardwareAccelerated="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:resizeableActivity="false"
+            android:screenOrientation="fullSensor"
+            tools:targetApi="n">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+      </intent-filter>
+      <intent-filter>
+        <!--URL Scheme启动-->
+        <!--必有项-->
+        <action android:name="android.intent.action.VIEW" />
+        <!--如果希望该应用可以通过浏览器的连接启动，则添加该项-->
+        <category android:name="android.intent.category.BROWSABLE" />
+        <!--表示该页面可以被隐式调用，必须加上该项-->
+        <category android:name="android.intent.category.DEFAULT" />
+        <!--协议部分-->
+        <data android:scheme="unityconnect" />
+      </intent-filter>
+
+      <meta-data
+              android:name="unityplayer.UnityActivity"
+              android:value="true" />
+    </activity>
+    <activity
+            android:name="com.unity3d.unityconnect.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    <activity
+            android:name="com.google.zxing.activity.CaptureActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+    <activity
+            android:name="com.unity3d.unityconnect.QRScanActivity"
+            android:screenOrientation="sensorPortrait" />
+    <activity
+            android:name="com.unity3d.unityconnect.PickImageActivity"
+            android:screenOrientation="sensorPortrait" />
+    <!-- unity 配置信息-->
+    <meta-data
+            android:name="unity.build-id"
+            android:value="78eef671-acd6-47d2-a07f-2825fa7f5510" />
+    <meta-data
+            android:name="unity.splash-mode"
+            android:value="0" />
+    <meta-data
+            android:name="unity.splash-enable"
+            android:value="True" />
+    <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+    <meta-data
+            android:name="unity.allow-resizable-window"
+            android:value="False" />
+  </application>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+  <uses-feature
+          android:name="android.hardware.touchscreen"
+          android:required="false" />
+  <uses-feature
+          android:name="android.hardware.touchscreen.multitouch"
+          android:required="false" />
+  <uses-feature
+          android:name="android.hardware.touchscreen.multitouch.distinct"
+          android:required="false" />
+  <uses-feature
+          android:name="android.software.leanback"
+          android:required="false" />
+
+  <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+  <!-- Required  一些系统要求的权限，如访问网络等-->
+  <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission
+          android:name="android.permission.WRITE_SETTINGS"
+          tools:ignore="ProtectedPermissions" />
+  <uses-permission
+          android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+          tools:ignore="ProtectedPermissions" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <!-- Optional for location -->
+  <uses-permission
+          android:name="android.permission.READ_LOGS"
+          tools:ignore="ProtectedPermissions" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+  
+  <uses-feature android:glEsVersion="0x00030001" />
+  <uses-feature android:name="android.hardware.opengles.aep" />
+</manifest>

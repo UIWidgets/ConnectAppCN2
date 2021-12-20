@@ -1,0 +1,4 @@
+[submodule "thirdparty/com.unity.uiwidgets"]
+	path = thirdparty/com.unity.uiwidgets
+	url = https://github.com/Unity-Technologies/com.unity.uiwidgets.git
+	branch = 2.0.4
