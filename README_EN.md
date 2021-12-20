@@ -7,7 +7,7 @@
 
 <h1 align="center"></h1>
 
-#### A Unity Connect community app made with Unity (Based on the [UIWidgets 2.0](https://github.com/UnityTech/UIWidgets))
+#### A Unity Connect community app made with Unity (Based on the [UIWidgets 2.0](https://github.com/Unity-Technologies/com.unity.uiwidgets))
 
 ### Preview（iOS & Android）
 
