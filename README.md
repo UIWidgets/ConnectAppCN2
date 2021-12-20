@@ -7,7 +7,7 @@
 
 <h1 align="center"></h1>
 
-#### Unity Connect 社区移动端 App (基于 [UIWidgets 2.0](https://github.com/UnityTech/UIWidgets))
+#### Unity Connect 社区移动端 App (基于 [UIWidgets 2.0](https://github.com/Unity-Technologies/com.unity.uiwidgets))
 [English Version](README_EN.md)
 
 ### 预览（iOS & Android）
