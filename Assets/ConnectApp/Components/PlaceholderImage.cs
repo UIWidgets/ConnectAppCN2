@@ -1,0 +1,65 @@
+using ConnectApp.Common.Visual;
+using Unity.UIWidgets.foundation;
+using Unity.UIWidgets.painting;
+using Unity.UIWidgets.ui;
+using Unity.UIWidgets.widgets;
+using Image = Unity.UIWidgets.widgets.Image;
+
+namespace ConnectApp.Components {
+    public class PlaceholderImage : StatelessWidget {
+        public PlaceholderImage(
+            string imageUrl,
+            float? width = null,
+            float? height = null,
+            float? borderRadius = null,
+            BoxFit? fit = null,
+            Color color = null,
+            Key key = null
+        ) : base(key: key) {
+            D.assert(imageUrl != null);
+            D.assert(borderRadius == null || borderRadius >= 0);
+            this.imageUrl = imageUrl;
+            this.width = width;
+            this.height = height;
+            this.borderRadius = borderRadius;
+            this.fit = fit;
+            this.color = color ?? CColors.LoadingGrey;
+        }
+
+        readonly string imageUrl;
+        readonly float? width;
+        readonly float? height;
+        readonly float? borderRadius;
+        readonly BoxFit? fit;
+        readonly Color color;
+
+        public override Widget build(BuildContext context) {
+            Widget child;
+            if (this.imageUrl.isEmpty()) {
+                child = new Container(
+                    width: this.width,
+                    height: this.height,
+                    color: this.color
+                );
+            }
+            else {
+                child = new Container(
+                    width: this.width,
+                    height: this.height,
+                    color: this.color,
+                    child: Image.network(
+                        src: this.imageUrl,
+                        width: this.width,
+                        height: this.height,
+                        fit: this.fit
+                    )
+                );
+            }
+
+            return new ClipRRect(
+                borderRadius: BorderRadius.all(this.borderRadius ?? 0),
+                child: child
+            );
+        }
+    }
+}
