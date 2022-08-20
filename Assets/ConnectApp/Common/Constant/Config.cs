@@ -41,7 +41,7 @@ namespace ConnectApp.Common.Constant {
 
         public const int versionCode = 151;
 
-        public const string originCodeUrl = "https://github.com/Unity-Technologies/ConnectAppCN2";
+        public const string originCodeUrl = "https://github.com/UIWidgets/ConnectAppCN2";
 
         public const string widgetOriginCodeUrl = "https://github.com/Unity-Technologies/com.unity.uiwidgets";
 
