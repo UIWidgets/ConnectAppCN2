@@ -23,12 +23,12 @@
 ## Get started
 #### Get repo
 ```shell
-$ git clone --recurse-submodules https://github.com/Unity-Technologies/ConnectAppCN2.git
+$ git clone --recurse-submodules https://github.com/UIWidgets/ConnectAppCN2.git
 $ cd ConnectAppCN2/
 ```
 or
 ```shell
-$ git clone https://github.com/Unity-Technologies/ConnectAppCN2.git
+$ git clone https://github.com/UIWidgets/ConnectAppCN2.git
 $ cd ConnectAppCN2/
 $ git submodule init
 $ git submodule update
