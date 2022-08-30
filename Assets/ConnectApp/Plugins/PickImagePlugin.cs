@@ -27,6 +27,7 @@ namespace ConnectApp.Plugins {
             }
 
             if (!isListened) {
+                isListened = true;
                 UIWidgetsMessageManager.instance.AddChannelMessageDelegate("pickImage", del: _handleMethodCall);
             }
         }

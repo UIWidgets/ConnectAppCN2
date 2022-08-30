@@ -31,8 +31,8 @@ namespace ConnectApp.Plugins {
         
         void addListener() {
             if (!this.isListened) {
-                UIWidgetsMessageManager.instance.AddChannelMessageDelegate("wechat", del: this._handleMethodCall);
                 this.isListened = true;
+                UIWidgetsMessageManager.instance.AddChannelMessageDelegate("wechat", del: this._handleMethodCall);
             }
         }
 
